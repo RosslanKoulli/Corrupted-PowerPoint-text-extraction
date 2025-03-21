@@ -1,5 +1,6 @@
 # Corrupted PowerPoint text extraction
-- This is a small project that uses a couple of libraries to extract the text from large PowerPoint files that are corrupted. This is primarily for students or teachers trying to get through PowerPoint submissions where the file has gone bust and can't be openned.  
+This is a small project that extracts the text from large PowerPoint/PDF files that are corrupted. This is primarily for trying to get through PowerPoint submissions where the file has gone bust and can't be opened.  
+
 ## Requirements 
 ### Basic Requirements 
 - python 3.8+ 
