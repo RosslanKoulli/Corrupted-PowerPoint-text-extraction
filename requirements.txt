@@ -1,0 +1,13 @@
+# Required Python packages for Corrupted PDF Text Extractor
+# Install with: pip install -r requirements.txt
+
+# Core PDF libraries (at least one is needed)
+pdfminer.six>=20221105  # Pure Python PDF parser
+pypdf>=3.0.0            # Pure Python PDF document toolkit
+
+# Optional but recommended libraries
+tika-python>=2.6.0      # Python bindings for Apache Tika
+ocrmypdf>=14.0.0        # OCR and repair tool for PDF files
+pdf2image>=1.16.3       # Convert PDF to PIL Image objects
+pytesseract>=0.3.10     # Python wrapper for Google's Tesseract-OCR
+Pillow>=9.5.0           # Fork of PIL, required by pdf2image and pytesseract

@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+dist/
+downloads/
+lib/
+lib64/
+
+# Virtual environments
+venv/
+
+# IDE
+.idea/
+.vscode/
+
+
+# Project specific
+*.txt
+!requirements.txt
+*.pdf
+*.pptx
+*.xlsx
+*.docx
+*.zip
+*.log
