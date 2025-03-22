@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  Corrupted-PowerPoint-text-extraction:
+    build:
+    context: .
+    dockerfile: DockerFile
+  image:  Corrupted-PowerPoint-text-extraction
+  volumes:
+  - ./:/data
+  # Default command is overridden when running the container with arguments

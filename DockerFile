@@ -1,0 +1,50 @@
+FROM python:3.10-slim
+
+# setting up working directory
+
+WORKDIR /app
+
+# Installing system depedencies
+RUN apt-get update && apt-get install -y \
+    tesseract-ocr \
+    poppler-utils \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements file
+COPY requirements.txt
+
+# Insta ll python dependencies 
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Installing CPY only version of PyTorch to save space 
+RUN pip install --no-cache-dir torch --extra-index-url https://download.pytorch.org/whl/cpu
+
+# Install NLP libraries
+
+RUN pip install --no-cache-dir nltk spacy
+
+# Download spacy model
+Run python -m spacy download en_core_web_sm
+
+# Dowload NLTK data
+
+RUN python -c "import nltk; nltk.download('punkt', quiet=True)"
+
+# COpy the application code 
+COPY pptxToTextConverter.py /app/
+COPY txtToPptxConverterProgram.py /app/
+
+# Create a working drectory for files
+RUN mkdir /data
+
+#Set the working directory as the volume mount point
+
+WORKDIR /data
+
+# Set the entrypoint to python
+
+ENTRYPOINT ["python", "/app/pptxToTextConverter.py"]
+
+#Default command (can be overridden)
+CMD["--help"]
